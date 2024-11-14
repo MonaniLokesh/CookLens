@@ -18,7 +18,7 @@ def main():
     if 'ingredients' not in st.session_state:
         st.session_state.ingredients = []
 
-    cfg_model_path = 'models/updated_weights.pt'
+    cfg_model_path = 'updated_weights.pt'  # update the weights path here 
     model = load_model(cfg_model_path)
 
     input_option = st.radio("Choose your input method:", ["Detect Ingredients Live", "Manually Enter Ingredients"])
@@ -38,7 +38,6 @@ def main():
             additional_ingredients = [ingredient.strip() for ingredient in user_input.split(",")]
             st.session_state.ingredients.extend(additional_ingredients)
 
-    # if ingredients are detected or entered display them and fetch recipe suggestions
     if st.session_state.ingredients:
         st.write(f"Current ingredients in the system: {', '.join(st.session_state.ingredients)}")
 
