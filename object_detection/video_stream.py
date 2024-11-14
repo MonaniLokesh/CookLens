@@ -11,7 +11,6 @@ def live_input(model, confidence=0.5):
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))  
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))  
 
-    # Create a placeholder for dynamic updates
     output = st.empty()  
     stop = st.button("Stop Video Stream")  
     detected_classes = set()  
@@ -22,13 +21,11 @@ def live_input(model, confidence=0.5):
             st.write("Can't read frame, stream ended. Exiting")
             break
 
-        frame = cv2.resize(frame, (width, height)) # resize frame to current dimensions 
+        frame = cv2.resize(frame, (width, height)) 
         output_img, result = infer_image(frame, model, confidence)
 
-        # display the processed image in Streamlit (update dynamically)
         output.image(output_img)
 
-        # loop over detected objects and store unique classes
         for detection in result:
             for detection_class in detection.boxes.cls.numpy().astype(int):
                 detected_classes.add(model.names[int(detection_class)])
