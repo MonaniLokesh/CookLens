@@ -13,11 +13,11 @@ def infer_image(frame, model, confidence):
     """
     Run inference on a single frame and return the image with detected bounding boxes.
     """
-    results = model.predict(source=frame, show=False, conf=confidence, save=False) # it contains like class ID, class names, coordinates of bounding boxes
+    results = model.predict(source=frame, show=False, conf=confidence, save=False) 
     
     for r in results:
-        im_array = r.plot()  # plot the image with bounding boxes
-        im = Image.fromarray(im_array[..., ::-1])  # convert BGR to RGB for display
+        im_array = r.plot() 
+        im = Image.fromarray(im_array[..., ::-1])  
         
     return im, results
 
