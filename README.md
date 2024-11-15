@@ -9,14 +9,44 @@ A web-based application that detects the ingredients you have and suggests recip
 - **Streamlit Interface**: Clean and interactive web interface.
 
 
-## **Installation**
+## Getting Started
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/MonaniLokesh/CookLens.git
+    cd CookLens
+    ```
+
+2. **Create a virtual environment**:
+    ```bash
+    python3 -m venv myenv
+    source myenv/bin/activate   # On Windows use: myenv\Scripts\activate
+    ```
+
+3. **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Create a **`.env`** file in the project directory and add your Groq API key:**:
+    
+        ```bash
+        GROQ_API_KEY=your_api_key_here
+        ```
+
+5. **Run the Streamlit app**:
+    ```bash
+    streamlit run app.py
+    ```
+
+<!-- ## **Getting Started**
 
 To install Project, follow these steps:
 1. Clone the repository: **`git clone https://github.com/MonaniLokesh/CookLens.git`**
 2. Navigate to the project directory: **`cd CookLens`**
-3. Install dependencies: **`pip install -r requirements.txt`**
+3. Install dependencies: **`pip install -r requirements.txt`** 
 4. Create a **`.env`** file in the project directory and add your Groq API key:**`GROQ_API_KEY=your_api_key_here`**
-5. Run the application:**`streamlit run app.py`**
+5. Run the application:**`streamlit run app.py`** -->
 
 ## **Usage**
 1. Use your device's camera for real-time detection of ingredients. The app will identify ingredients as they appear in the camera feed.
