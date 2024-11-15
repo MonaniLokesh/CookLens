@@ -29,6 +29,7 @@ To install Project, follow these steps:
 
 ## **Results**
 ![plot](results/results-3.png)
+
 ![plot](results/confusion_matrix_normalized-5.png)
 
 ## **Technologies Used**
@@ -38,4 +39,7 @@ To install Project, follow these steps:
 - **Python**: Backend logic and integration.
 
 ## **Contributing**
-Contributions are welcome! If you’d like to enhance the project, feel free to submit a pull request.
+Contributions are welcome! If you want to contribute to this project, feel free to fork the repository and submit a pull request with your changes.
+
+## **Contact**
+For any questions or feedback, feel free to contact [lokeshmonani112@gmail.com] or open an [issue](https://github.com/MonaniLokesh/recipe_recommendation/issues/new) in the repository.
