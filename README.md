@@ -1,4 +1,4 @@
-## **Recipe Recommendation**
+## **CookLens**
 
 A web-based application that detects the ingredients you have and suggests recipes accordingly. Powered by a YOLO model for ingredient detection and integrated with the Groq API for recipe suggestions, this app makes meal planning quick and simple.
 
