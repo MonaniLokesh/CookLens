@@ -15,7 +15,7 @@ To install Project, follow these steps:
 1. Clone the repository: **`git clone https://github.com/MonaniLokesh/recipe_recommendation.git`**
 2. Navigate to the project directory: **`cd recipe_recommendation`**
 3. Install dependencies: **`pip install -r requirements.txt`**
-4. Create a .env file in the project directory and add your Groq API key:**`GROQ_API_KEY=your_api_key_here`**
+4. Create a **`.env`** file in the project directory and add your Groq API key:**`GROQ_API_KEY=your_api_key_here`**
 5. Run the application:**`streamlit run app.py`**
 
 ## **Usage**
