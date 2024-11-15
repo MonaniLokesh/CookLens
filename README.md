@@ -19,17 +19,13 @@ To install Project, follow these steps:
 5. Run the application:**`streamlit run app.py`**
 
 ## **Usage**
-1. Detect Ingredients with the Camera
-Use your device's camera for real-time detection of ingredients. The app will identify ingredients as they appear in the camera feed.
+1. Use your device's camera for real-time detection of ingredients. The app will identify ingredients as they appear in the camera feed.
 
-2. Upload Ingredients
-Alternatively, you can upload an image of the ingredients you want to use. The app will detect them automatically.
+2. Once the ingredients are detected, the app will fetch and display recipe suggestions based on the detected ingredients.
 
-3. View Recipe Suggestions
-Once the ingredients are detected, the app will fetch and display recipe suggestions.
+3. You can interact with the bot by adding ingredients, specifying cuisine types, and more.
 
-4. Try Recipes
-Select a recipe from the suggestions and get cooking!
+4. Choose a recipe from the suggestions and follow the steps to start cooking! 😎👨‍🍳
 
 ## **Results**
 ![plot](results/results-3.png)
