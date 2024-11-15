@@ -34,7 +34,7 @@ To install Project, follow these steps:
 
 ## **Technologies Used**
 - **Streamlit**: For the web-based user interface.
-- **YOLO Model**: For ingredient detection.
+- **YOLO Model**: Custom-trained YOLO model for ingredient detection using a custom dataset.
 - **Groq API**: For recipe generation.
 - **Python**: Backend logic and integration.
 
