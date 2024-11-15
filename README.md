@@ -32,8 +32,8 @@ Once the ingredients are detected, the app will fetch and display recipe suggest
 Select a recipe from the suggestions and get cooking!
 
 ## **Results**
-'results/results-3.png'
-'results/confusion_matrix_normalized-5.png'
+[!plot] results/results-3.png
+[!plot] results/confusion_matrix_normalized-5.png
 
 ## **Technologies Used**
 - **Streamlit**: For the web-based user interface.
