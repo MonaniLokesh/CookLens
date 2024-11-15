@@ -28,10 +28,10 @@ A web-based application that detects the ingredients you have and suggests recip
     pip install -r requirements.txt
     ```
 
-4. **Create a **`.env`** file in the project directory and add your Groq API key:**:
-        ```bash
-        GROQ_API_KEY=your_api_key_here
-        ```
+4. **Create a **`.env`** file in the project directory and add your Groq API key**:
+    ```bash
+    GROQ_API_KEY=your_api_key_here
+    ```
 
 5. **Run the Streamlit app**:
     ```bash
