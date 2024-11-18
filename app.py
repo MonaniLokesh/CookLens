@@ -5,10 +5,7 @@ from object_detection.model import load_model
 from llm.recipe_suggestion import get_recipe_suggestions
 
 def main():
-    """
-    Main entry point for the application. Handles both object detection and recipe suggestion.
-    """
-   
+
     groq_api_key = load_config()
 
     st.set_page_config(page_title="Conversational Recipe Suggestion Bot", layout="centered")
