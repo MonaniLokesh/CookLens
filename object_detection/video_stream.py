@@ -3,41 +3,50 @@ import pandas as pd
 import streamlit as st
 from object_detection.model import infer_image
 
-def live_input(model, confidence=0.5):
-    """
-    Capture live video from the camera, detect ingredients, and save them to a CSV.
-    """
-    cap = cv2.VideoCapture(0)  
-    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))  
-    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))  
+class LiveIngredientDetector:
+    def __init__(self, model, confidence=0.5):
+        self.model = model
+        self.confidence = confidence
+        self.cap = cv2.VideoCapture(0)
+        self.width = int(self.cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+        self.height = int(self.cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+        self.detected_classes = set()
 
-    output = st.empty()  
-    stop = st.button("Stop Video Stream")  
-    detected_classes = set()  
+    def release_camera(self):
+        if self.cap.isOpened():
+            self.cap.release()
 
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            st.write("Can't read frame, stream ended. Exiting")
-            break
+    def process_frame(self, frame):
+        frame = cv2.resize(frame, (self.width, self.height))
+        output_img, results = infer_image(frame, self.model, self.confidence)
 
-        frame = cv2.resize(frame, (width, height)) 
-        output_img, result = infer_image(frame, model, confidence)
-
-        output.image(output_img)
-
-        for detection in result:
+        for detection in results:
             for detection_class in detection.boxes.cls.numpy().astype(int):
-                detected_classes.add(model.names[int(detection_class)])
-        
-        if stop:
-            cap.release()
-            break
+                self.detected_classes.add(self.model.names[int(detection_class)])
 
-    cap.release() 
-    
-    if detected_classes:
-        return list(detected_classes)
-    else:
-        st.warning("No ingredients detected.")
-        return []
+        return output_img
+
+    def run_detection(self):
+        output = st.empty()  
+        stop = st.button("Stop Video Stream")
+
+        while True:
+            ret, frame = self.cap.read()
+            if not ret:
+                st.write("Can't read frame, stream ended. Exiting")
+                break
+
+            processed_frame = self.process_frame(frame)
+
+            output.image(processed_frame)
+
+            if stop:
+                break
+
+        self.release_camera()
+
+        if self.detected_classes:
+            return list(self.detected_classes)
+        else:
+            st.warning("No ingredients detected.")
+            return []
