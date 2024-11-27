@@ -56,6 +56,18 @@ To install Project, follow these steps:
 
 4. Choose a recipe from the suggestions and follow the steps to start cooking! 😎👨‍🍳
 
+
+## **Dataset**
+The custom dataset used for training the YOLO model is available for download from the following sources:
+
+1. **Dataset URL 1**: [Download here](https://universe.roboflow.com/testveg/test-veg)  
+   
+2. **Dataset URL 2**: [Download here](https://universe.roboflow.com/robouserflow/vegetables_v3)  
+
+This dataset contains labeled images of various ingredients used for detection.
+Please choose the dataset based on your needs or use both for better model training.
+
+
 ## **Results**
 ![plot](results/results-3.png)
 
